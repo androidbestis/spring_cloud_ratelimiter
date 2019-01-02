@@ -1,0 +1,28 @@
+server:
+  port: 5698
+#zuul:
+#  routes:
+#    RateLimiterPro:
+#      path: /RateLimiterPro/**
+#      url: forward:/RateLimiterPro
+
+#zuul:
+#  routes:
+#    baidu:
+#      path: /it/**
+#      url:  http://www.ityouknow.com/
+
+zuul:
+  routes:
+    RateLimiterPro:
+      path: /producer/**
+      serviceId:  RateLimiterPro
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:8889/eureka/
+
+spring:
+  application:
+    name: SpringCloud_RateLimiter
